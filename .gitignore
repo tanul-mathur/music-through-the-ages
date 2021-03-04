@@ -1,0 +1,12 @@
+#project cache files
+__pycache__
+.vscode
+.cache
+.env
+
+#ignore data files
+billboard_top100_1970_2020.csv
+combined_track_audio_details.csv
+
+#ignore archived codes folder
+code_archive
