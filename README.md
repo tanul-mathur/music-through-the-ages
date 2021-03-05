@@ -1,9 +1,3 @@
----
-title: 'Music Through the Ages'
-author: 'Tanul Mathur'
-date: 'March 4th, 2021'
----
-
 # Music Through the Ages
 
 A Data Geek's take on the question ***'How has music changed through the years?'*** Or is there a change at all? Do we still like the same kind of songs as we did 50 years ago? Or have we started to love radically different songs?  
@@ -51,7 +45,7 @@ For this Top 100 songs dataset the Hopkins Score came out as ***~0.176***, indic
 Now that we have made up our mind to look under the hood for clusters. Let's see what should be the ideal number of clusters.
 Below is a chart representing the results of a classic 'Elbow test'. This consists of the number of clusters on x-axis and their respective SSD on the y-axis. The idea being that as the number of clusters increases the SSD will tend to approach 0 and the 'elbow' on the line chart will indicate the point from which the reduction in SSD is very less compared to the increase in no. of clusters. Making the point the most optimum number of clusters for the given dataset.
 
-![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/elbow_plot.html)
+![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/elbow_plot.svg)
 
 
 
