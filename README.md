@@ -41,11 +41,48 @@ Now even after having a strong intuition to to perform Clustering it is importan
 
 For this Top 100 songs dataset the Hopkins Score came out as ***~0.176***, indicating there were clusters waiting to be uncovered!
 
-### Elbow test to find the optimal number of clusters
-Now that we have made up our mind to look under the hood for clusters. Let's see what should be the ideal number of clusters.
-Below is a chart representing the results of a classic 'Elbow test'. This consists of the number of clusters on x-axis and their respective SSD on the y-axis. The idea being that as the number of clusters increases the SSD will tend to approach 0 and the 'elbow' on the line chart will indicate the point from which the reduction in SSD is very less compared to the increase in no. of clusters. Making the point the most optimum number of clusters for the given dataset.
+### Elbow test
+Next I performed the traditional 'Elbow Test' to determine the optimal number of clusters. Below is a chart representing the results. This consists of the number of clusters on x-axis and their respective SSD on the y-axis. The idea being that as the number of clusters increases the SSD will tend to approach 0 and the 'elbow' on the line chart will indicate the point from which the reduction in SSD is very less compared to the increase in no. of clusters. Making this indicative point the most optimum number of clusters for the given dataset.
 
-![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/elbow_plot.jpeg)
+![](./plots/elbow_plot.jpeg)
+
+<div class="container-fluid" style="margin-top:40px"> 
+<iframe src = "./plots/elbow_plot2.html" width="800" height="600" title="Elbow Plotly"></iframe>
+</div>
+
+Seems like 3 clusters is the way ahead, we can clearly see the reduction in SSD is not worth it after this point. Now let's implement the KMeans algorithm using the recommended k = 3.
+
+Look at the no. of song distribution by cluster - 
+
+![](./plots/cluster_summary.jpeg)
+
+Next I tried visualizing the cluster themes by plotting out cluster centers by Audio features
+
+![](./plots/clusters_polar.jpeg)
+
+This has helped put the clusters into perspective, seems like - 
+* 0s are Neutral songs with relatively high energy/loudness     - Neutral Energetic
+* 1s are Happy songs with high energy/danceability              - Happy Dance
+* 2s are Soft Acoustic songs with low energy/danceability       - Soft Acoustics
+
+Now of course this is just based on the Cluster centers (means), lets validate if these Cluster themes hold true across the whole distribution.
+
+![](./plots/clusters_pairplot.jpeg)
+
+Interesting! the Cluster themes definitely hold together across distributions as well! The plots that bring this out best - 
+* All the charts across the Acousticness and Valence rows clearly demarkate the 'Happy Dance' & 'Soft Acoustic' clusters
+* Especially Acousticness vs Valence - 'Soft Acoustic' songs are bunched on the right-side of the chart. While 'Happy Dance' on the top-left with low acousticness and high valence. Lastly 'Neutral Energetic' on the bottom left are low in both the features
+* The Kernel Density plots also provide helpful insight into the 'Neutral Energetic' clusters. Apart from being skewed towards the Neutral-Sad emotional zone these are relatively louder songs, similar energy but lower danceability compared to the 'Happy Dance' cluster
+* Tempo, speechiness are consistent throughout the clusters
+
+Overall quite happy with how the clusters have turned out. Now let's see how these have faired in the test of time...
+
+
+## How have music trends shifted in the last 50 years?
+
+We have defined Clusters among the Top 100 Songs from the last 50 years, now we are going to look at how the number of songs have changed across these Clusters and over the years
+
+
 
 
 
