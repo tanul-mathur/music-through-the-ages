@@ -34,9 +34,12 @@ There are few more interesting areas where I would like to expand this project -
 5. Web app that lets users create Spotify playlist of any year's Billboard Top 100 songs
 
 ## App
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/tanul-mathur/music-through-the-ages/AppFinal.py)
 Feel like playing around the dataset? Wonder which artist has the most Hits? Spoiler alert it's not Pink Floyd! Is The Weeknd on there? wait what-about The Beatles?? Head over to the Streamlit app and explore where your favorite artists are among the Top 100 and how their songs have evolved!
 
 ## Script Glossary
 * [TopMusicChartsScraper.py](https://github.com/tanul-mathur/music-through-the-ages/blob/master/TopMusicChartsScraper.py) - Web scraping script to get track title, artist, rank from Billboard's Wikipedia pages
 * [SpotifyGetAccessToken.py](https://github.com/tanul-mathur/music-through-the-ages/blob/master/SpotifyGetAccessToken.py) - Script to get Spotify API access token
 * [GetSpotifyFeatures.py](https://github.com/tanul-mathur/music-through-the-ages/blob/master/GetSpotifyFeatures.py) - Script to extract Audio features from the Spotify API
+* [AppFinal.py](https://github.com/tanul-mathur/music-through-the-ages/blob/master/AppFinal.py) - Main script for setting up the App
+* [Helper.py](https://github.com/tanul-mathur/music-through-the-ages/blob/master/Helper.py) - Script containing functions needed for the App
