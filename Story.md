@@ -16,7 +16,7 @@ This project is an attempt to collect relevant evidence (data) and analyzing it 
 ## Workflow
 Here's a snapshot of the project workflow -
 
-![](/plots/Workflow.jpg)
+![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/Workflow.jpg)
 
 In order to create an unbiased collection of popular music I decided to use songs from [Billboard's Year-End Hot 100 US singles charts.](https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_2020) These charts are ideal because their ranking is based on year-long song popularity, which is measured as a combination of offline sales and airplay time. Plus it gives a consistent popularity reference from a general market point of view avoiding any personal opinions/biases. After scraping said list from their Wikipedia pages I used track and artist names to extract audio features from the Spotify API and created a final dataset for analysis. 
 
@@ -39,7 +39,7 @@ Now that we have the technicalities covered, let's dive into the dataset and see
 
 First off let's check out Summary stats of the dataset by plotting Histograms.
 
-![](/plots/data_hist.jpeg)
+![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/data_hist.jpeg)
 
 This quickly gives a sneak peak into key highlights -
 * Valence, Acousticess, Energy, Danceability, Loudness - these seem to have the most spread
@@ -49,7 +49,7 @@ This quickly gives a sneak peak into key highlights -
 
 Now lets standardize these features so that they can all be compared on the same scale.
 
-![](/plots/initial_data_boxplot.jpeg)
+![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/initial_data_boxplot.jpeg)
 
 Quick and dirty box plots on the standardized features makes it super clear to visualize the overall characterstics of the dataset. Few highlights appear now -
 
@@ -79,7 +79,7 @@ For this Top 100 songs dataset the Hopkins Score came out as ***~0.176***, indic
 ### Elbow test
 But how many? We still need to find out the ideal number of clusters before we start implementing K-Means. Firstly, lets try out the traditional 'Elbow Plot'. In this approach we run K-means for range of cluster numbers and record the Within cluster Sum of Squared Distances(WSSD) for each of them. Next we plot the no. of clusters against their respective WSSDs hoping to find a bend/elbow point that makes it obvious what the optimal number of clusters should be. However as every experienced data scientist knows, that is rarely the case.
 
-![](./plots/elbow_plot.jpeg)
+![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/elbow_plot.jpeg)
 
 
 Seems like 3 clusters is the way ahead, but doesn't feel very conclusive. We can see the reduction in SSD is not worth it after 3 clusters, but what about 7?
@@ -91,19 +91,19 @@ Also discovered this great [article](https://towardsdatascience.com/prediction-s
 
 It's well beyond the scope of this article to get much deeper into the calculations of prediction strength. Let's move on for now and see what prediction strengths look like for our dataset.
 
-![](./plots/prediction_strength_clusters.jpeg)
+![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/prediction_strength_clusters.jpeg)
 
 Right after the 3 cluster point the prediction strength decreases to 60% and further down as the number of clusters is increased. Thus indicating that until 3 clusters the centroids tags are consistent across test and train groups for > 90% of the cases and as we increase clusters the tags become more inconsistent dropping the %age below 60%. This has now provided confidence that 3 clusters is the way to go!
 
 Now let's implement K-Means using the recommended k = 3 and analyze the clusters. First looking at the overall summary stats of the clusters, i.e. - location of cluster centers in the feature space, no. of songs in each cluster.  
 
-![](./plots/cluster_summary.jpeg)
+![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/cluster_summary.jpeg)
 
 Almost half of the songs are tagged into cluster '1', followed by '0' and '2'. The Cluster centers definitely look interesting but it's difficult to compare them on a table, let's see if we can visualize these in a different way.
 
 &nbsp;
 
-![](./plots/clusters_polar.jpeg)
+![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/clusters_polar.jpeg)
 
 This Polar chart helps put the clusters into perspective, seems like -
 * 0s are Neutral songs with relatively high energy/loudness     - Neutral Energetic
@@ -114,7 +114,7 @@ Now of course this is just based on the Cluster Centers (means), lets validate i
 
 &nbsp;
 
-![](./plots/clusters_pairplot.jpeg)
+![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/clusters_pairplot.jpeg)
 
 Interesting! the Cluster themes definitely hold together across distributions as well!
 * All the charts across the Acousticness and Valence rows clearly demarcate the 'Happy Dance' & 'Soft Acoustic' clusters
@@ -125,7 +125,7 @@ Interesting! the Cluster themes definitely hold together across distributions as
 Overall quite happy with how the clusters have turned out. One final check to see how cluster features hold up along the years.
 Since I've deliberately excluded 'year' as a feature while clustering this shouldn't be much of an issue.
 
-![](./plots/cluster_features_timeline.jpeg)
+![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/cluster_features_timeline.jpeg)
 
 These charts show the trends of respective feature means by clusters and time. (I've ignored Tempo & Speechiness from these as they are not relevant to the clusters) For example let's look at the top left chart, which draws the mean values for acousticness by clusters and years. Here we can see that the songs from 'Soft Acoustic' cluster are significantly higher than the remaining clusters and this remains the case throughout the 50 years. Similar trends can be seen across the other charts as well, individual cluster means remain distinct throughout. These trends further validate the consistency of clusters across the years.
 
@@ -135,7 +135,7 @@ Alright so just to recap till now we have created the dataset with 50 years of T
 
 ## How have music trends shifted in the last 50 years?
 
-![](./plots/cluster_songs_timeline.jpeg)
+![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/cluster_songs_timeline.jpeg)
 
 Voila! Music trends have certainly shifted over time!
 * 'Neutral Energetic' songs have increasingly become more and more popular. Starting of from just 12% songs in the Top 100s in the 1970s this category has come up to become the most popular one in the 2010s with majority share of songs of 57%
