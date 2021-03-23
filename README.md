@@ -15,14 +15,7 @@ This project is an attempt to collect relevant evidence (data) and analyzing it 
 &nbsp;
 
 ## Workflow
-Here's a snapshot of the project workflow -
-
 ![](/plots/Workflow.jpg)
-
-## Script Glossary
-* [TopMusicChartsScraper.py](https://github.com/tanul-mathur/music-through-the-ages/blob/master/TopMusicChartsScraper.py) - Web scraping script to get track title, artist, rank from Billboard's Wikipedia pages
-* [SpotifyGetAccessToken.py](https://github.com/tanul-mathur/music-through-the-ages/blob/master/SpotifyGetAccessToken.py) - Script to get Spotify API access token
-* [GetSpotifyFeatures.py](https://github.com/tanul-mathur/music-through-the-ages/blob/master/GetSpotifyFeatures.py) - Script to extract Audio features from the Spotify API
 
 ## Story
 [Link to the full story](./Story.md)
@@ -42,3 +35,8 @@ There are few more interesting areas where I would like to expand this project -
 
 ## App
 Feel like playing around the dataset? Wonder which artist has the most Hits? Spoiler alert it's not Pink Floyd! Is The Weeknd on there? wait what-about The Beatles?? Head over to the Streamlit app and explore where your favorite artists are among the Top 100 and how their songs have evolved!
+
+## Script Glossary
+* [TopMusicChartsScraper.py](https://github.com/tanul-mathur/music-through-the-ages/blob/master/TopMusicChartsScraper.py) - Web scraping script to get track title, artist, rank from Billboard's Wikipedia pages
+* [SpotifyGetAccessToken.py](https://github.com/tanul-mathur/music-through-the-ages/blob/master/SpotifyGetAccessToken.py) - Script to get Spotify API access token
+* [GetSpotifyFeatures.py](https://github.com/tanul-mathur/music-through-the-ages/blob/master/GetSpotifyFeatures.py) - Script to extract Audio features from the Spotify API

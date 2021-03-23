@@ -4,8 +4,10 @@ __pycache__
 .cache
 .env
 
-#ignore data folder
-data
+#ignore irrelevant data files
+billboard_top100_1970_2020.csv
+combined_track_audio_details.csv
+year_cluster_count.csv
 
 #ignore archived codes folder
 code_archive
