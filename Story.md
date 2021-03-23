@@ -3,7 +3,7 @@
 A Data Geek's take on the question ***'How have music tastes changed through the years?'***
 
 
-![](/images/window_vinyl.jpg)
+![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/images/window_vinyl.jpg)
 <span>Photo by <a href="https://unsplash.com/@shutters_guild?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Travis Yewell</a> on <a href="https://unsplash.com/@tanulmathur/likes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
 
