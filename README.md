@@ -34,7 +34,8 @@ There are few more interesting areas where I would like to expand this project -
 5. Web app that lets users create Spotify playlist of any year's Billboard Top 100 songs
 
 ## App
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/tanul-mathur/music-through-the-ages/AppFinal.py)
+:notes: [![Music Through Ages](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/tanul-mathur/music-through-the-ages/AppFinal.py)
+
 Feel like playing around the dataset? Wonder which artist has the most Hits? Spoiler alert it's not Pink Floyd! Is The Weeknd on there? wait what-about The Beatles?? Head over to the Streamlit app and explore where your favorite artists are among the Top 100 and how their songs have evolved!
 
 ## Script Glossary
