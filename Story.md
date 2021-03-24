@@ -7,7 +7,7 @@ A Data Geek's take on the question ***'How have music tastes changed through the
 <span>Photo by <a href="https://unsplash.com/@shutters_guild?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Travis Yewell</a> on <a href="https://unsplash.com/@tanulmathur/likes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
 
-I'm sure many of you would have gone through the following conversation with your parents at some point during your childhood "What is this noise you are listening to? In 'our days' we listened to actual songs with beautiful melodies and soul-touching tunes, not this cacophony of monkeys with instruments!"  To me this always sounded like a classic generalization, a blanket statement comparing the music tastes of generations irrespective of the differences in personal preference. Brushing it aside as generation gap, I never gave second thought to it until recently when I was listening to some of the latest chartbusters of 2021. I couldn't help but think that the tables had turned and I had the same opinion about today's songs as my parents had about the songs I listened to in my childhood. This left me wondering are music trends actually shifting? Are the same kind of songs popular that were chartbusters 50 years ago? Or have we started to love radically different songs?  
+I'm sure many of you would have gone through the following conversation with your parents at some point during your childhood "What is this noise you are listening to? In 'our days' we listened to actual songs with beautiful melodies and soul-touching tunes, not this cacophony of monkeys with instruments!"  To me this always sounded like a classic generalization, a blanket statement comparing the music tastes of generations irrespective of the differences in personal preference. Brushing it aside as generation gap, I never gave second thought to it until recently when I was listening to some of the latest chartbusters of 2021. I couldn’t help but think that the tables had turned and I had the same opinion about today’s songs as my parents had about my playlists. This left me wondering are music trends actually shifting? Are the same kind of songs popular that were chartbusters 50 years ago? Or have we started to love radically different songs?  
 
 This project is an attempt to collect relevant evidence (data) and analyzing it to get answers for these questions.
 
@@ -29,7 +29,7 @@ Quick context around some of the [Spotify Audio feature definitions](https://dev
 * **Valence** - A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).
 * **Loudness** - The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typical range between -60 and 0 db.
 
-These features are very useful for analysis since rather than representing individual genres they represent the inherent characterstics of the songs.
+These features are very useful for analysis since rather than representing individual genres they represent the inherent characteristics of the songs.
 
 Now that we have the technicalities covered, let's dive into the dataset and see what we can find. If you are interested in how the data extraction was done you can refer to my [github repo.](https://github.com/tanul-mathur/music-through-the-ages)
 
@@ -51,7 +51,7 @@ Now lets standardize these features so that they can all be compared on the same
 
 ![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/initial_data_boxplot.jpeg)
 
-Quick and dirty box plots on the standardized features makes it super clear to visualize the overall characterstics of the dataset. Few highlights appear now -
+Quick and dirty box plots on the standardized features makes it super clear to visualize the overall characteristics of the dataset. Few highlights appear now -
 
  * Dance, Energy, Loudness are definitely key themes, the distribution of songs seems to be skewed towards the higher side
  * Similarly on the other end of the spectrum highly speechy or acoustic songs are a rarity among the top 100
@@ -85,7 +85,7 @@ But how many? We still need to find out the ideal number of clusters before we s
 Seems like 3 clusters is the way ahead, but doesn't feel very conclusive. We can see the reduction in SSD is not worth it after 3 clusters, but what about 7?
 
 ### Cluster Prediction Strength
-In search of another approach to finding out optimal clusters I ended up going back to textbooks. Andy Burkiv's 100 page ML book illustrates an interesting ML approach of calculating **prediction strength** of clusters. The concept is to split the dataset into train/ test, implement clustering on both of them and then compare clusters formed in each of these to determine what %age of points are tagged to the same centroids across train and test. Recommended further reading in the [book](http://themlbook.com/).
+In search of another approach to finding out optimal clusters I ended up going back to textbooks. Andriy Burkov's 100 page ML book illustrates an interesting ML approach of calculating **prediction strength** of clusters. The concept is to split the dataset into train/ test, implement clustering on both of them and then compare clusters formed in each of these to determine what %age of points are tagged to the same centroids across train and test. Recommended further reading in the [book](http://themlbook.com/).
 
 Also discovered this great [article](https://towardsdatascience.com/prediction-strength-a-simple-yet-relatively-unknown-way-to-evaluate-clustering-2e5eaf56643) online that illustrates the concept with an example.
 
@@ -127,7 +127,7 @@ Since I've deliberately excluded 'year' as a feature while clustering this shoul
 
 ![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/cluster_features_timeline.jpeg)
 
-These charts show the trends of respective feature means by clusters and time. (I've ignored Tempo & Speechiness from these as they are not relevant to the clusters) For example let's look at the top left chart, which draws the mean values for acousticness by clusters and years. Here we can see that the songs from 'Soft Acoustic' cluster are significantly higher than the remaining clusters and this remains the case throughout the 50 years. Similar trends can be seen across the other charts as well, individual cluster means remain distinct throughout. These trends further validate the consistency of clusters across the years.
+These charts show the trends of respective feature means by clusters and time. (I've ignored Tempo & Speechiness from these as they are not relevant to the clusters) To understand better let’s take up an example and focus on the top left chart, which draws the mean values for acousticness by clusters and years. Here we can see that the songs from 'Soft Acoustic' cluster are significantly higher than the remaining clusters and this remains the case throughout the 50 years. Similar trends can be seen across the other charts as well, individual cluster means remain distinct throughout. These trends further validate the consistency of clusters across the years.
 
 Alright so just to recap till now we have created the dataset with 50 years of Top 100 songs along with their audio features, identified song clusters, defined their themes and validated them against the overall dataset and throughout time. Next it's time to answer the big question.
 
