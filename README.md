@@ -18,7 +18,7 @@ This project is an attempt to collect relevant evidence (data) and analyzing it 
 ![](https://github.com/tanul-mathur/music-through-the-ages/blob/master/plots/Workflow.jpg)
 
 ## Story
-[Link to the full story](./Story.md)
+[Link to the Medium article](https://tanulmathur.medium.com/music-through-the-ages-b7acbfa9eb7c)
 
 ## Key Highlight
 > One underlying theme running across clusters and time is that we love energetic dance songs. The emotional gradient of songs may have shifted to a more neutral tone from the Happy notes of the yester years but throughout the 50 years we have always loved a song that makes us groove!  
