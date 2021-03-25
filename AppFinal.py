@@ -67,7 +67,7 @@ st.write(fig)
 workflow_image = Image.open("./plots/Workflow.jpg")
 
 st.text("")
-st.markdown("### Project Brief")
+st.markdown("### Project Brief  ([Medium Article](https://tanulmathur.medium.com/music-through-the-ages-b7acbfa9eb7c))")
 st.image(workflow_image)
 
 with st.beta_expander("Spotify Audio Feature definitions"):
